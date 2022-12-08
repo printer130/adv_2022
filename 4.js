@@ -4,21 +4,19 @@ function fitsInOneBox(boxes) {
 
   const ascList = ({ list, side }) => list.sort((a, b) => a[side] - b[side])
 
-  dicc.forEach((letter) => {
+  for (letter of dicc) {
     const list = ascList({ list: boxes, side: letter })
-
     for (let idx = 0; idx < list.length - 1; idx++) {
       if (list[idx]["l"] < list[idx + 1]["l"]
         & list[idx]["w"] < list[idx + 1]["w"]
         & list[idx]["h"] < list[idx + 1]["h"]) {
         isInOneBox = true
-        continue
       } else {
         isInOneBox = false
         break
       }
     }
-  })
+  }
 
   return isInOneBox
 }

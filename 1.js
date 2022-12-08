@@ -1,16 +1,16 @@
 const gifts = ['book', 'game', 'socks']
 
 function wrapping(gifts) {
-  for (let i = 0; i < gifts.length; i++) {
+  let list = []
+  for (let i in gifts) {
     let text = ""
-    const len = gifts[i].length + 2
-    const s = gifts[i]
-    for (let j = 0; j < len; j++) {
+    let toRange = gifts[i].length + 2
+    for (let j = 0; j < toRange; j++) {
       text += "*"
     }
-    gifts[i] = `${text}\n*${s}*\n${text}`
+    list[i] = `${text}\n*${gifts[i]}*\n${text}`
   }
-  return gifts
+  return list
 }
 
 
