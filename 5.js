@@ -1,8 +1,7 @@
 function getMaxGifts(giftsCities, maxGifts, maxCities) {
-  let result = 0
   const ordened_list = giftsCities.sort((a, b) => b - a)
 
-  result = ordened_list.reduce((total, num) => {
+  const result = ordened_list.reduce((total, num) => {
     if (!maxCities || total + num > maxGifts || total + num === maxGifts - 1) {
       return total
     }
